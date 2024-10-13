@@ -106,7 +106,7 @@ stage('Deploiement en staging'){
             steps {
             // Create an Approval Button with a timeout of 15minutes.
             // this require a manuel validation in order to deploy on production environment
-                    timeout(time: 15, unit: "MINUTES") {
+                    timeout(time: 2, unit: "MINUTES") {
                         input message: 'Do you want to deploy in production ?', ok: 'Yes'
                     }
 
