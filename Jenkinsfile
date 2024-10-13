@@ -11,7 +11,6 @@ stages {
                 script {
                 sh '''
                  docker rm -f jenkins
-                 cd $(pwd)
                  docker build -t $DOCKER_IMAGE:$DOCKER_TAG .
                 sleep 6
                 '''
