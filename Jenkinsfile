@@ -48,7 +48,7 @@ stages {
 
                 script {
                 sh '''
-                docker login -u  admin -p $DOCKER_PASS
+                docker login -u  admin -p $DOCKER_PASS $DOCKER_ID
                 docker push $DOCKER_ID/$DOCKER_IMAGE:$DOCKER_TAG
                 '''
                 }
