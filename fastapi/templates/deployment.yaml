@@ -23,10 +23,11 @@ spec:
         {{- toYaml . | nindent 8 }}
         {{- end }}
     spec:
-      {{- with .Values.imagePullSecrets }}
+      #{{- with .Values.imagePullSecrets }}
       imagePullSecrets:
-        {{- name: toYaml . | nindent 8 }}
-      {{- end }}
+        - name: credreg
+        #{{- toYaml . | nindent 8 }}
+      #{{- end }}
       serviceAccountName: {{ include "fastapi.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
